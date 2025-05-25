@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,7 +13,9 @@
 
     <h1>Fernando Alonso</h1>
 
-    <img src="alonso.jpg" alt="Fernando Alonso conduciendo su coche de F1" width="300" height="200">
+    <img id="imagenPrincipalAlonso" src="alonso.jpg" alt="Fernando Alonso conduciendo su coche de F1" width="300" height="200">
+    <button onclick="cambiarImagenPrincipal()" class="boton-cambiar-imagen">Ver otra imagen de Alonso</button>
+
 
     <h2>Biografía</h2>
     <p>Fernando Alonso Díaz, nacido el 29 de julio de 1981 en Oviedo, Asturias, es uno de los pilotos más destacados en la historia de la Fórmula 1.
@@ -88,6 +91,7 @@
         <li><a href="img2_grande.jpg"><img src="img2_pequeña.jpg" alt="Alonso en boxes"></a></li>
         <li><a href="img3_grande.jpg"><img src="img3_pequeña.jpg" alt="Alonso conduciendo en lluvia"></a></li>
     </ul>
+
     <form action="formulario.html" method="post">
         <h2>Contacto</h2>
         <p>¿Tienes alguna pregunta o comentario? ¡No dudes en contactarnos!</p>
@@ -99,11 +103,28 @@
         <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
         <input type="submit" value="Enviar Mensaje">
     </form>
-
     <iframe src="https://www.fernandoalonso.com/" width="800" height="400"></iframe>
 
- 
+  
 
-</body>
+    <script>
+      
+        var imagenActualAlonso = 1;
+
+        function cambiarImagenPrincipal() {
+            var imagen = document.getElementById("imagenPrincipalAlonso");
+
+            if (imagenActualAlonso === 1) {
+                imagen.src = "alonso2.jpg"; 
+                imagenActualAlonso = 2; 
+            } else {
+                imagen.src = "alonso.jpg"; 
+                imagenActualAlonso = 1; 
+            }
+        }
+        
+
+    </script>
+    </body>
 
 </html>
